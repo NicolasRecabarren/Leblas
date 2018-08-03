@@ -37,15 +37,25 @@ class AppController extends Controller {
 
 	public $components = array(
 		'Session',
-        /*'Auth' => array(
-        	'authenticate' => array("CustomLogin"),
-        	//'authenticate' => array('Form' => array('userModel' => 'GeneralUser','fields' => array('username' => 'username','password' => 'password'),),),
-            //'loginRedirect' => array('plugin'=>'general','controller' => 'GeneralUsers', 'action' => 'login'),
-            'logoutRedirect' => array('plugin'=>'general','controller' => 'GeneralUsers', 'action' => 'login'),
-           	'loginAction' => array('plugin'=>'general','controller' => 'GeneralUsers', 'action' => 'login'),
-			'loginError' => 'Invalid Username or Password entered, please try again.',
-			'authorize' => array('Controller'),
-			'authError' => false)*/
+		'Auth' => [
+			'loginRedirect' => [
+				'controller' => 'pages',
+				'action' => 'admin_pages'
+			],
+			'logoutRedirect' => [
+				'controller' => 'pages',
+				'action' => 'admin_login'
+			],
+			'authenticate' => [
+				'Form' => [
+					'passwordHasher' => 'Blowfish',
+					'fields' => [
+						'username' => 'username',
+						'password' => 'password'
+					]
+				]
+			]
+		]
 	);
 	
 	public function isAuthorized($user){
@@ -54,7 +64,7 @@ class AppController extends Controller {
 	
     public function beforeFilter(){
     	$this->response->disableCache();
-    	
+		
     	ini_set('memory_limit', '-1');
 		//$this->Auth->allow('login','logout','perfile','seleccionSistema', 'validamosUsuarioXSistemas');
 		

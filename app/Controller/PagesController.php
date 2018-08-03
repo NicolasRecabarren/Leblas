@@ -40,11 +40,29 @@ class PagesController extends AppController {
 
 	public $uses = array();
 	
+	public function beforeFilter(){
+		parent::beforeFilter();
+		$this->Auth->allow("home","admin_login");
+	}
+	
 	public function home(){
 		die("asdas");
 	}
 	
 	public function admin_login(){
+		$this->layout = "admin_login";
 		
+		if($this->request->is('post')){
+			if ($this->Auth->login()) {
+				$this->Session->setFlash(__("Bienvenido/a %s",$this->Auth->user('username')),"mensaje-exito");
+				return $this->redirect($this->Auth->redirectUrl());
+			}
+			
+			$this->request->data['User']['password'] = '';
+		}
+	}
+	
+	public function admin_pages(){
+		die("logueado!");
 	}
 }
