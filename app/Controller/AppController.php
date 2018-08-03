@@ -73,7 +73,6 @@ class AppController extends Controller {
 			} else {
 				$this->layout = "admin";
 			}
-			
 		}
 	}
 	

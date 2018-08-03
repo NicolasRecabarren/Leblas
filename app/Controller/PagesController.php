@@ -63,8 +63,20 @@ class PagesController extends AppController {
 	}
 	
 	public function admin_pages(){
-		
 		$this->set('title_for_layout','Admin | Home');
 		
+		if($this->request->is(['post','put'])){
+			if($this->Page->save($this->request->data)){
+				$this->Session->setFlash(__("Página guardada correctamente."),"mensaje-exito");
+			} else {
+				$this->Session->setFlash(__("Ha ocurrido un error al guardar la página."),"mensaje-error");
+			}
+		}
+		
+		$paginas = $this->Page->find('list',[
+			'fields' => ['id','title']
+		]);
+		
+		$this->set(compact('paginas'));
 	}
 }
