@@ -1,0 +1,24 @@
+<?php
+class DATABASE_CONFIG {
+    public $default = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host'       =>'104.198.55.182',
+        'login'      => 'root',
+        'password'   => 'Nksp.2050!',
+        'database'   => 'kiptorERP_desarrollo',
+        'prefix'     => '',
+        'encoding'   => 'utf8',
+    );
+
+    public $gestor = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host'       =>'104.198.55.182',
+        'login'      => 'root',
+        'password'   => 'Nksp.2050!',
+        'database'   => 'gestorArchivosDesarrollo',
+        'prefix'     => '',
+        'encoding'   => 'utf8',
+    );
+}
