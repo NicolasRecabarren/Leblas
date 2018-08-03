@@ -66,9 +66,15 @@ class AppController extends Controller {
     	$this->response->disableCache();
 		
     	ini_set('memory_limit', '-1');
-		//$this->Auth->allow('login','logout','perfile','seleccionSistema', 'validamosUsuarioXSistemas');
 		
-		//$this->set('user', $this->Auth->user());
+		if(!empty($this->request->params['prefix']) && $this->request->params['prefix'] == "admin"){
+			if($this->request->params['action'] == "admin_login"){
+				$this->layout = "admin_login";
+			} else {
+				$this->layout = "admin";
+			}
+			
+		}
 	}
 	
 	public function beforeRender(){

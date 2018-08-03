@@ -63,6 +63,8 @@ class PagesController extends AppController {
 	}
 	
 	public function admin_pages(){
-		die("logueado!");
+		
+		$this->set('title_for_layout','Admin | Home');
+		
 	}
 }
