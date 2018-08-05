@@ -13,6 +13,10 @@ class User extends AppModel{
                 $this->data[$this->alias]['password']
             );
         }
+        
+        if( isset($this->data[$this->alias]['password']) && empty($this->data[$this->alias]['password']) ){
+            unset($this->data[$this->alias]['password']);
+        }
         return true;
     }
 }

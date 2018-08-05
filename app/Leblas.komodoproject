@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="8892a394-deb8-44f9-9c5b-64370a595266" kpf_version="5" name="Leblas.komodoproject">
+<livefolder id="1f1ca6b5-41a9-40a2-a9b2-3043c661ab89" idref="8892a394-deb8-44f9-9c5b-64370a595266" name="Controller" url="Controller">
+</livefolder>
+<livefolder id="23cf8437-c2a6-4ad9-bae6-8df863cccd24" idref="8892a394-deb8-44f9-9c5b-64370a595266" name="View" url="View">
+</livefolder>
+<livefolder id="74fbd7de-a52b-4171-878f-56ca38aa9a10" idref="8892a394-deb8-44f9-9c5b-64370a595266" name="Config" url="Config">
+</livefolder>
+<livefolder id="ea53df5e-0b31-4629-87ab-2b39e3eb6d7d" idref="8892a394-deb8-44f9-9c5b-64370a595266" name="Model" url="Model">
+</livefolder>
+<livefolder id="f80b38ca-13d7-4334-84c5-6a7766c96970" idref="8892a394-deb8-44f9-9c5b-64370a595266" name="webroot" url="webroot">
+</livefolder>
+<preference-set idref="8892a394-deb8-44f9-9c5b-64370a595266" id="project" preftype="project">
+</preference-set>
+</project>

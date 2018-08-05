@@ -72,6 +72,7 @@ class AppController extends Controller {
 				$this->layout = "admin_login";
 			} else {
 				$this->layout = "admin";
+				$this->set('logged_user',$this->Auth->user());
 			}
 		}
 	}

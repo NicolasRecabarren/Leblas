@@ -18,5 +18,5 @@
  */
 ?>
 <?php echo $this->Html->charset('utf-8'); ?>
-<?php echo $this->Html->script('assets/plugins/jQuery-lib/2.0.3/jquery.min.js');?>
+
 <?php echo $this->fetch('content'); ?>
