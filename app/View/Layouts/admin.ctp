@@ -13,7 +13,7 @@
         <?= $this->Html->css('admin/dist/css/AdminLTE.min.css');?>
         <?= $this->Html->css('admin/dist/css/skins/_all-skins.min.css');?>
         <?= $this->Html->css('jquery.toast.css');?>
-        
+
         <?= $this->Html->script('/css/admin/jquery/dist/jquery.min.js');?>
         <?= $this->Html->script('/css/admin/bootstrap/dist/js/bootstrap.min.js');?>
         <?= $this->Html->script('/css/admin/jquery-slimscroll/jquery.slimscroll.min.js');?>
@@ -39,7 +39,7 @@
             <?php echo $this->Session->flash(); ?>
             <header class="main-header">
                 <!-- Logo -->
-                <a href="../../index2.html" class="logo">
+                <a href="javascript:;" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>A</b>LT</span>
                     <!-- logo for regular state and mobile devices -->
@@ -65,7 +65,7 @@
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header" style="height: 80px;">
-                                        <i class="fa fa-user-circle fa-2x"></i>
+                                        <i class="fa fa-user-circle fa-2x" style="color: #FFF;"></i>
                                         <p><?=$logged_user['username'];?></p>
                                     </li>
                                     <!-- Menu Footer-->
@@ -111,7 +111,7 @@
                                     ['class' => false,'escape' => false]
                             );?>
                         </li>
-                        <li class="treeview">
+                        <!--<li class="treeview">
                             <a href="javascript:;">
                                 <i class="fa fa-th"></i> <span>Galerías</span>
                                 <span class="pull-right-container">
@@ -132,7 +132,7 @@
                                     );?>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li>
                             <?= $this->Html->link('<i class="fa fa-users"></i><span>'.__('Usuarios').'</span>',
                                     ['controller' => 'pages','action' => 'users','admin' => true],

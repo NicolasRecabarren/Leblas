@@ -275,7 +275,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 </head>
  
 <body bgcolor="#FFFFFF">
-
+<? /*
 <!-- HEADER -->
 <table class="head-wrap">
 	<tr>
@@ -286,70 +286,69 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 					<table>
 						<tr>
 							<td></td>
-							<td align="right"><h6 style="font-weight:900;font-size:14px;color:#444" class="collapse">Proceso de Remuneraciones</h6></td>
+							<td align="right"><h6 style="font-weight:900;font-size:14px;color:#444" class="collapse"></h6></td>
 						</tr>
 						<tr>
                             <td></td>
-                            <td align="right"><h6 style="font-weight:900;font-size:14px;color:#444" class="collapse"><?php echo $empresa;?></h6></td>
+                            <td align="right"><h6 style="font-weight:900;font-size:14px;color:#444" class="collapse"></h6></td>
                         </tr>
 					</table>
 				</div>
-				
 		</td>
 		<td></td>
 	</tr>
 </table><!-- /HEADER -->
+*/ ?>
 <!-- BODY -->
 <table class="body-wrap">
 	<tr>
 		<td></td>
 		<td class="container" bgcolor="#FFFFFF">
-
 			<div class="content">
-			<table>
+			<table style="background-color: #48647A;border-radius: 10px;">
 				<tr>
-					<td style="padding:15px;background-color:#ecf8ff;margin-bottom:15px; border-radius: 10px;font-size:16px;">
-						<h3>Estimado, <?php echo $nombre; ?></h3>
-						<!-- Callout Panel -->
+					<td style="padding: 15px;">
+						<span style="font-size: 20px;color: #FFF;">Estimado/a, se ha completado un nuevo formulario de contacto:</span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding:15px;background-color:#ecf8ff;margin-bottom:15px; font-size:16px;">
 						<p class="callout">
 							<?php echo $this->fetch('content'); ?>
-						</p><!-- /Callout Panel -->		
+						</p>
 						<table>
-							<tr>
-								<th style="border:1px solid;font-size:12px;">Usuario</th>
-								<th style="border:1px solid;font-size:12px;">Fecha</th>
-								<th style="border:1px solid;font-size:12px;">Comentario Anexo</th>
+							<tr style="background-color: #48647a;">
+								<td style="font-size:12px;color:#FFF;padding:4px;">Fecha</td>
+								<td style="background-color:#FFF; border: 1px solid #d7d7d7;font-size:12px;padding:4px;"><?php echo $contact['Contact']['created'];?>
 							</tr>
-							<tr>
-								<td style="background-color:#ebebeb; border-radius: 0px 0px 0px 5px; border: 1px solid #d7d7d7;font-size:12px;"><?php echo $usuario ?></td>
-								<td style="background-color:#ebebeb; border-radius: 0px 0px 0px 0px; border: 1px solid #d7d7d7;font-size:12px;"><?php echo $fecha ?></td>
-								<td style="background-color:#ebebeb; border-radius: 0px 0px 5px 0px; border: 1px solid #d7d7d7;font-size:12px;"><?php echo $comentario ?></td>
+							<tr style="background-color: #48647a;">
+								<td style="font-size:12px;color:#FFF;padding:4px;">Nombre</td>
+								<td style="background-color:#FFF; border: 1px solid #d7d7d7;font-size:12px;padding:4px;"><?php echo $contact['Contact']['nombre'];?>
+							</tr>
+							<tr style="background-color: #48647a;">
+								<td style="font-size:12px;color:#FFF;padding:4px;">Teléfono de contacto</td>
+								<td style="background-color:#FFF; border: 1px solid #d7d7d7;font-size:12px;padding:4px;"><?php echo $contact['Contact']['telefono'];?>
+							</tr>
+							<tr style="background-color: #48647a;">
+								<td style="font-size:12px;color:#FFF;padding:4px;">Correo electrónico</td>
+								<td style="background-color:#FFF; border: 1px solid #d7d7d7;font-size:12px;padding:4px;"><?php echo $contact['Contact']['email'];?>
+							</tr>
+							<tr style="background-color: #48647a;">
+								<td style="font-size:12px;color:#FFF;padding:4px;">Comentario</td>
+								<td style="background-color:#FFF; border: 1px solid #d7d7d7;font-size:12px;padding:4px;"><?php echo $contact['Contact']['contenido'];?>
 							</tr>
 						</table>
-						<div class="linkSitio" style="margin: 12px 0 15px 5px; font-size: 13px;">
+						<? /*<div class="linkSitio" style="margin: 12px 0 15px 5px; font-size: 13px;">
                             <a href="http://rem.jrconsultores.cl/" title="Ir a" target="_blank">http://rem.jrconsultores.cl/</a>
-                        </div>
+                        </div>*/ ?>
 						<p class="callout">
 							Atte,<br />
-							Servicios Laborales
-						</p>			
-						<br />
-						<!-- social & contact -->
-						<table class="social" style="background-color:#ebebeb; border-radius: 5px; border: 1px solid #d7d7d7;" width="100%">
-							<tr>
-								<td style="font-size:10px;">
-									Ante cualquier consulta o duda por favor contactar con el operador de remuneraciones de su empresa.									
-									<span class="clear"></span>	
-									
-								</td>
-							</tr>
-						</table><!-- /social & contact -->
-						
+							Leblas
+						</p>
 					</td>
 				</tr>
 			</table>
 			</div><!-- /content -->
-									
 		</td>
 		<td></td>
 	</tr>
@@ -361,25 +360,21 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 		<td></td>
 		<td class="container">
 			
-				<div class="content">
+			<div class="content">
 				<table style="width: 100%;">
-				<tr>
-					<td align="center">
-						<p style="font-size:10px;font-weight:bold;border-top:1px solid #d7d7d7;padding-top:15px">
-							Sistema Remuneraciones | 2016
-							<!--<a href="#">Terms</a> |
-							<a href="#">Privacy</a> |
-							<a href="#"><unsubscribe>Unsubscribe</unsubscribe></a>-->
-						</p>
-					</td>
-				</tr>
-			</table>
-				</div>
+					<tr>
+						<td align="center">
+							<p style="font-size:10px;font-weight:bold;border-top:1px solid #d7d7d7;padding-top:15px">
+								Leblas | 2018
+							</p>
+						</td>
+					</tr>
+				</table>
+			</div>
 				
 		</td>
 		<td></td>
 	</tr>
 </table>
-
 </body>
 </html>

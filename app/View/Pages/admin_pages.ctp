@@ -1,5 +1,14 @@
-<?=$this->Html->css('admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css');?>
-<?=$this->Html->script('/css/admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js');?>
+<?=$this->Html->script('/css/admin/ckeditor/ckeditor.js');?>
+<?=$this->Html->script('/css/admin/ckeditor/config.js');?>
+<?=$this->Html->css('admin/ckeditor/skins/moono-lisa/editor.css');?>
+<?=$this->Html->script('/css/admin/ckeditor/styles.js');?>
+<?=$this->Html->css('admin/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css');?>
+<?=$this->Html->css('admin/ckeditor/plugins/scayt/dialogs/dialog.css');?>
+<?=$this->Html->css('admin/ckeditor/plugins/tableselection/styles/tableselection.css');?>
+<?=$this->Html->css('admin/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css');?>
+<?=$this->Html->script('/css/admin/ckeditor/plugins/table/dialogs/table.js');?>
+<?=$this->Html->css('admin/ckeditor/skins/moono-lisa/dialog.css');?>
+
 <section class="content-header">
     <h1>Modificar Sección <small>¡modifica tu página!</small></h1>
     <ol class="breadcrumb">
@@ -45,7 +54,8 @@
                 data: {page: $this.val()},
                 success: function(response){
                     $('.page-form').html(response);
-                    $('.page-form form textarea').wysihtml5();
+                    CKEDITOR.replace('PageContent');
+                    //$('.page-form form textarea').wysihtml5();
                 },
                 error: function(){
                     alert_error("Ha ocurrido un error.");

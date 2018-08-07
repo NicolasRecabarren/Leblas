@@ -38,7 +38,7 @@
                                         ['controller' => 'pages','action' => 'view_contact', 'admin' => true,$contact['Contact']['id']],
                                         ['class' => 'btn btn-xs btn-success','escape' => false]
                                 );?>
-                                <?= $this->Html->link('<i class="fa fa-refresh"></i> Eliminar',
+                                <?= $this->Html->link('<i class="fa fa-trash"></i> Eliminar',
                                         ['controller' => 'pages','action' => 'admin_delete_contact', 'admin' => true,$contact['Contact']['id']],
                                         ['class' => 'btn btn-xs btn-default','escape' => false,'confirm' => '¿Está seguro de eliminar este contacto?']
                                 );?>

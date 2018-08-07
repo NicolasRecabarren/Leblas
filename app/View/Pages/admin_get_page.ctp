@@ -34,6 +34,7 @@
             ],
             'class' => 'form-control',
             'div' => 'form-group col col-md-4',
+            'readonly' => 'readonly',
             'type' => 'number'
     ]);
     

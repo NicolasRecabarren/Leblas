@@ -46,11 +46,63 @@ class PagesController extends AppController {
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow("home","admin_login");
+		$this->Auth->allow("home","saveContact","admin_login");
 	}
 	
 	public function home(){
-		die("asdas");
+		$secciones = $this->Page->find('all',[
+				'recursive' => -1,
+				'order' => ['order_menu' => 'ASC']
+		]);
+		
+		$seccionesMenu = Hash::combine($secciones,'{n}.Page.title','{n}.Page.slug');
+		$this->set(compact('secciones','seccionesMenu'));
+	}
+	
+	public function saveContact(){
+		$this->layout = "ajax";
+		if($this->request->is('post')){
+			
+			$this->Contact->create();
+			if($this->Contact->save($this->request->data)){
+
+				$this->request->data = $this->Contact->find('first',[
+					'recursive' => -1,
+					'conditions' => ['id' => $this->Contact->id]
+				]);
+
+				list($ano,$mes,$dia) = explode('-',substr($this->request->data['Contact']['created'],0,10));
+				$nuevaFecha = "$dia/$mes/$ano";
+				
+				$this->request->data['Contact']['created'] = substr($this->request->data['Contact']['created'],10);
+				$this->request->data['Contact']['created'] = $nuevaFecha.$this->request->data['Contact']['created'];
+
+				App::uses('CakeEmail', 'Network/Email');
+				$Email = new CakeEmail();
+				$Email
+					->config('gmail')
+					->emailFormat('html')
+
+					->from(['contacto@leblas.cl' => 'Leblas'])
+					->to('recabarren.valderrama.nicolas@gmail.com')
+					->subject('Leblas | Nuevo Contacto Enviado')
+					->template('default','default')
+					->helpers(["Html"])
+					->viewVars([
+						'contact' => $this->request->data
+					]);
+				
+				try{
+					$Email->send();
+					die("sended");
+				}catch(Exception $e){
+					Configure::write('debug',1);
+					dbug($e->getMessage());
+					die("error");
+				}
+			}
+		}
+		die("error");
 	}
 	
 	public function admin_login(){

@@ -12,5 +12,6 @@
 <livefolder id="f80b38ca-13d7-4334-84c5-6a7766c96970" idref="8892a394-deb8-44f9-9c5b-64370a595266" name="webroot" url="webroot">
 </livefolder>
 <preference-set idref="8892a394-deb8-44f9-9c5b-64370a595266" id="project" preftype="project">
+  <long id="prefs_version">1</long>
 </preference-set>
 </project>
