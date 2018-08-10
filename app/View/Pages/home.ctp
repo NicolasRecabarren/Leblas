@@ -43,7 +43,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<p class="text-center">&copy; Copyright 2018. Av. Nueva Esperanza 777 - Las Condes, Santiago, Chile - contacto@leblas.cl </p>
+				<p class="text-center">LEBLAS Consultores Soluciones Reales SpA, &copy; Copyright</p>
+				<p class="text-center">Fono: 56-226465995 / 56 9 62443908 Email: contacto@leblas.cl</p>
+				<p class="text-center">Serrano 73, of. 312 - Santiago, Chile</p>
 			</div>
 		</div>
 	</div>

@@ -7,13 +7,14 @@
     <div class="row">
         <div class="block col-md-3 cero-padding" style="text-align:center;">
             <div>
-                <a href="javascript:;"><img src="https://www.agmarketing.cl/paquetes/servicio_new/images/thumb-1510682497-151993363.jpg" alt="Diego Gonzalez" border="0" class="botones bor"></a>
+                <a href="javascript:;">
+                    <?=$this->Html->image('thumb-1510682497-151993363.jpg',['alt' => 'Trabajador 1','class' => 'botones bor', 'border' => 0]);?>
+                </a>
                 <a href="javascript:;">
                     <table class="caption cap">
                         <tr>
                             <td valing="middle" style="padding: 10px;">Diego Gonzalez
                                 <br />
-                                <!--<h4><p class="post">founder</p>-->
                             </td>
                         </tr>
                     </table>
@@ -27,7 +28,8 @@
         <div class="block col-md-3 cero-padding" style="text-align:center;">
             <div>
                 <a href="javascript:;">
-                    <img src="https://www.agmarketing.cl/paquetes/servicio_new/images/thumb-1504300464-804175245.jpg" alt="Carolina Casti" border="0" class="botones bor"></a>
+                    <?=$this->Html->image('thumb-1504300464-804175245.jpg',['alt' => 'Trabajador 2','class' => 'botones bor', 'border' => 0]);?>
+                </a>
                 <a href="javascript:;">
                     <table class="caption cap">
                         <tr>
@@ -42,7 +44,9 @@
         </div>
         <div class="block col-md-3 cero-padding" style="text-align:center;">
             <div>
-                <a href="javascript:;"><img src="https://www.agmarketing.cl/paquetes/servicio_new/images/thumb-1504300485-660857179.jpg" alt="Natalia Dominguez" border="0" class="botones bor"></a>
+                <a href="javascript:;">
+                    <?=$this->Html->image('thumb-1504300485-660857179.jpg',['alt' => 'Trabajador 3','class' => 'botones bor', 'border' => 0]);?>
+                </a>
                 <a href="javascript:;">
                     <table class="caption cap">
                         <tr>
@@ -59,7 +63,9 @@
         </div>
         <div class="block col-md-3 cero-padding" style="text-align:center;"> 
             <div>
-                <a href="javascript:;"><img src="https://www.agmarketing.cl/paquetes/servicio_new/images/thumb-1504300500-504491477.jpg" alt="Maggie Covich" border="0" class="botones bor"></a>
+                <a href="javascript:;">
+                    <?=$this->Html->image('thumb-1504300500-504491477.jpg',['alt' => 'Trabajador 4','class' => 'botones bor', 'border' => 0]);?>
+                </a>
                 <a href="javascript:;">
                     <table class="caption cap">
                         <tr>

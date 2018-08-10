@@ -46,7 +46,13 @@ class PagesController extends AppController {
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow("home","saveContact","admin_login");
+		$this->Auth->allow("seleccion","home","saveContact","admin_login");
+	}
+	
+	public function seleccion(){
+		$this->layout = "seleccion_pagina";
+		
+		
 	}
 	
 	public function home(){

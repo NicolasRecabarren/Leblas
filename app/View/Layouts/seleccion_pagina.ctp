@@ -45,23 +45,11 @@
 
 		<?= $this->Html->script('vendor/jquery-1.10.2.min.js');?>
     </head>
-
     <body>
-		<div id="top"></div>
-		<section id="">
-			<?=$this->Element('layout/carrusel_superior');?>
-		</section>
-        <div id="header-sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
-            <section id="header" class="bg-color0">
-                <?=$this->Element('layout/menu_superior',['seccionesMenu' => $seccionesMenu]);?>
-            </section>
-        </div>
         <div id="box_wrap">
             <?= $this->fetch('content'); ?>
 		</div>
-		<div id="gallery_container"></div>
-
-		<div class="preloader">
+        <div class="preloader">
 			<div class="preloaderimg"></div>
 		</div>
 		

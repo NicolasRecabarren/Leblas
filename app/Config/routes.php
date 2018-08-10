@@ -28,7 +28,9 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 
+	//Router::connect('/', array('plugin'=>false,'controller' => 'Pages', 'action' => 'seleccion'));
 	Router::connect('/', array('plugin'=>false,'controller' => 'Pages', 'action' => 'home'));
+	Router::connect('/home', array('plugin'=>false,'controller' => 'Pages', 'action' => 'home'));
 	Router::connect('/admin', array('plugin'=>false,'controller' => 'Pages', 'action' => 'login','admin' => true));
 	Router::connect('/admin/users/login', array('plugin'=>false,'controller' => 'Pages', 'action' => 'login','admin' => true));
 
