@@ -51,8 +51,6 @@ class PagesController extends AppController {
 	
 	public function seleccion(){
 		$this->layout = "seleccion_pagina";
-		
-		
 	}
 	
 	public function home(){
@@ -70,6 +68,8 @@ class PagesController extends AppController {
 		if($this->request->is('post')){
 			
 			$this->Contact->create();
+			$this->request->data['Contact']['created'] = (new DateTime())->format('Y-m-d H:i:s');
+			$this->request->data['Contact']['modified'] = (new DateTime())->format('Y-m-d H:i:s');
 			if($this->Contact->save($this->request->data)){
 
 				$this->request->data = $this->Contact->find('first',[
@@ -86,11 +86,11 @@ class PagesController extends AppController {
 				App::uses('CakeEmail', 'Network/Email');
 				$Email = new CakeEmail();
 				$Email
-					->config('gmail')
+					->config('leblas')
 					->emailFormat('html')
 
 					->from(['contacto@leblas.cl' => 'Leblas'])
-					->to('recabarren.valderrama.nicolas@gmail.com')
+					->to('alexander.lepe@leblas.cl')
 					->subject('Leblas | Nuevo Contacto Enviado')
 					->template('default','default')
 					->helpers(["Html"])
@@ -228,5 +228,21 @@ class PagesController extends AppController {
 				'recursive' => -1,
 				'order' => ['created' => 'DESC']
 		]));
+	}
+	
+	public function admin_delete_contact($id = null){
+		
+		$this->Contact->id = $id;
+		if(!$this->Contact->exists()){
+			throw new NotFoundException(__('Contacto inválido.'));
+		}
+			
+		if($this->Contact->delete()){
+			$this->Session->setFlash(__('Contacto eliminado correctamente.'),'mensaje-exito');
+			$this->redirect(['action' => 'contacts','admin' => true]);
+		} else {
+		$this->Session->setFlash(__('No se pudo eliminar el contacto.'),'mensaje-error');
+	    }
+		
 	}
 }

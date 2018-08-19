@@ -41,11 +41,11 @@
         <?=$this->Html->css('material-photo-gallery');?>
         
 		<?=$this->Html->css('home');?>
-		<?= $this->Html->css('jquery.toast.css');?>
+		<?=$this->Html->css('jquery.toast.css');?>
 
 		<?= $this->Html->script('vendor/jquery-1.10.2.min.js');?>
     </head>
-    <body>
+    <body style="/*background-color: #2F3438;*/">
         <div id="box_wrap">
             <?= $this->fetch('content'); ?>
 		</div>
@@ -54,7 +54,6 @@
 		</div>
 		
 		<?= $this->Html->script('vendor/respond.min.js');?>
-		<? //= $this->Html->script('vendor/placeholdem.min.js');?>
 		
 		<?= $this->Html->script('vendor/bootstrap.min.js');?>
 		<?= $this->Html->script('vendor/hoverIntent.js');?>
@@ -86,7 +85,7 @@
         <!--<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAraMmqvZFxVHen-vRAZ6uVJpNQ9x_Rh3Q&sensor=false" type="text/javascript" charset="utf-8"></script>-->
 		        
 		<div id="val"></div>
-        <?= $this->Html->script('vendor/material-photo-gallery.js');?>
+        <?=$this->Html->script('vendor/material-photo-gallery.js');?>
         <?=$this->Html->script('home');?>
     </body>
 </html>

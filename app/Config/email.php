@@ -75,6 +75,24 @@ class EmailConfig {
 		]
 		
 	);
+	
+	public $leblas = array(
+		'port'=>465,
+		//'port'=>587,
+		'timeout'=>'60',
+		'host' => 'ssl://mail.leblas.cl',
+		'username' => 'alexander.lepe@leblas.cl',
+		'password' => 'alexanderleblas1',
+        'transport' => 'Smtp',
+        'tls' => false,
+		'context' => [
+			'ssl' => [
+				'verify_peer' => false,
+				'verify_peer_name' => false,
+				'allow_self_signed' => true
+			]
+		]
+	);
 
 	public $fast = array(
 		'from' => 'you@localhost',
